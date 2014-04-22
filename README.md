@@ -1,7 +1,8 @@
-### OpenGL学习笔记，使用VS2008+glfw+glew+glm
+﻿### OpenGL学习笔记，使用VS2008+glfw+glew+glm
 -----------------------
 #### 配置环境
 配置环境：
+>
 	本程序是基于OpenGL,GLFW,GLEW,GLM，项目如果要正常运行，需要正确配置环境
 	1.C/C++->常规->附加包含目录，添加include文件夹，include目录结构如下：
 	├─GL
