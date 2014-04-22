@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;C:\Users\Administrator\Documents\Visual Studio 2008\Projects\OpenGL_lesson\include&quot;"
+				AdditionalIncludeDirectories="..\\include"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;GLEW_STATIC"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -63,7 +63,7 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="glfw3dll.lib opengl32.lib glu32.lib glew32s.lib"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="&quot;C:\Users\Administrator\Documents\Visual Studio 2008\Projects\OpenGL_lesson\lib&quot;"
+				AdditionalLibraryDirectories="..\\lib"
 				IgnoreDefaultLibraryNames="msvcrt"
 				GenerateDebugInformation="true"
 				SubSystem="1"

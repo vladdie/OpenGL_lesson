@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="01_firstWindow"
-	ProjectGUID="{E48700F7-8233-4F27-867F-0D3E316805C5}"
-	RootNamespace="My01_firstWindow"
+	Name="00_environment"
+	ProjectGUID="{37EBCFF3-F568-4D0B-85A4-AAEE9D11A40B}"
+	RootNamespace="My00_environment"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>
@@ -41,8 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="C:\Users\Administrator\Documents\Visual Studio 2008\Projects\OpenGL_lesson\include"
-				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;GLEW_STATIC"
+				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -61,10 +60,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="glfw3dll.lib opengl32.lib glu32.lib glew32s.lib"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="C:\Users\Administrator\Documents\Visual Studio 2008\Projects\OpenGL_lesson\lib"
-				IgnoreDefaultLibraryNames="msvcrt;LIBCMT"
 				GenerateDebugInformation="true"
 				SubSystem="1"
 				TargetMachine="1"
@@ -175,7 +171,7 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\01_firstWindow.cpp"
+				RelativePath=".\00_environment.cpp"
 				>
 			</File>
 			<File

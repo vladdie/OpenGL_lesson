@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01_firstWindow", "01_firstW
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02_The first triangle", "02_The first triangle\02_The first triangle.vcproj", "{9458029A-9A23-40FE-812E-579CE641FF8B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "00_environment", "00_environment\00_environment.vcproj", "{37EBCFF3-F568-4D0B-85A4-AAEE9D11A40B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -25,6 +27,10 @@ Global
 		{9458029A-9A23-40FE-812E-579CE641FF8B}.Debug|Win32.Build.0 = Debug|Win32
 		{9458029A-9A23-40FE-812E-579CE641FF8B}.Release|Win32.ActiveCfg = Release|Win32
 		{9458029A-9A23-40FE-812E-579CE641FF8B}.Release|Win32.Build.0 = Release|Win32
+		{37EBCFF3-F568-4D0B-85A4-AAEE9D11A40B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{37EBCFF3-F568-4D0B-85A4-AAEE9D11A40B}.Debug|Win32.Build.0 = Debug|Win32
+		{37EBCFF3-F568-4D0B-85A4-AAEE9D11A40B}.Release|Win32.ActiveCfg = Release|Win32
+		{37EBCFF3-F568-4D0B-85A4-AAEE9D11A40B}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
