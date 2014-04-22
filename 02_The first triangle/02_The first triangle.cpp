@@ -5,10 +5,14 @@
 
 #include <iostream>
 using namespace std;
+
 //Include GLEW.Always include it before gl.h and glfw.h,since it's a bit magic
-#include <gl/glew.h>
+#include <GL/glew.h>
+
 //Include GLFW
 #include <glfw/glfw3.h>
+GLFWwindow* window;		//global variable
+
 //Include GLM
 #include <glm/glm.hpp>
 using namespace glm;
@@ -22,17 +26,13 @@ int _tmain(int argc, _TCHAR* argv[])
 		return -1;
 	}
 
-	//创建窗口
+	//Open a window and create its OpenGL contex
 	glfwWindowHint(GLFW_SAMPLES,4); //4x antialiasing
-//	glfwWindowHint(GLFW_VERSION_MAJOR,4); //We want OpenGL 4.4
-//	glfwWindowHint(GLFW_VERSION_MINOR,0);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR,4);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR,0);
 	glfwWindowHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE); //We don't want the old OpenGL
 
-	//Open a window and create its OpenGL context
-	GLFWwindow* window;		//全局变量 
-	window=glfwCreateWindow(1920,1080,"02_The first triangle",NULL,NULL);
+	window=glfwCreateWindow(1920,1000,"02_The first triangle",NULL,NULL);
 	if (window==NULL)
 	{
 		cerr<<"Failed to open GLFW window.Maybe your GPU is not supported!"<<endl;
@@ -42,6 +42,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	glfwMakeContextCurrent(window);
 
 	//Initialize GLEW
+	glewExperimental=true;
 	if (glewInit()!=GLEW_OK)
 	{
 		cerr<<"Failed to initialize GLEW"<<endl;
@@ -78,6 +79,10 @@ int _tmain(int argc, _TCHAR* argv[])
 	do 
 	{
 		//Draw whatever we want,first attribute buffer:vertices
+
+		//Clear the screen
+		glClear(GL_COLOR_BUFFER_BIT);
+
 		glEnableVertexAttribArray(0);
 		glBindBuffer(GL_ARRAY_BUFFER,vertexbuffer);
 		glVertexAttribPointer(
