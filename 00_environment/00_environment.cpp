@@ -34,26 +34,37 @@ int _tmain(int argc, _TCHAR* argv[])
 	{
 		//逐行读取*.vcproj文件中的内容
 		string line;
+		int line_count=0;//统计行数
 		while(getline(f_file_read,line))
+		{
 			vcproj_content.push_back(line);
+			line_count++;
+		}
 		f_file_read.close();
 		
-		vector<const string>::iterator it=vcproj_content.begin();
-		string blank="				";//xml文件里对齐
-		vcproj_content.insert(it+43,blank+additional_include_directories);
-		vcproj_content[44]=blank+preprocessor_definitions;					//替换原有行而不是插入新行
-		vcproj_content.insert(it+63,blank+additional_dependencies);
-		vcproj_content.insert(it+65,blank+additional_library_directories);
-		vcproj_content.insert(it+66,blank+ingnore_default_library_names);
-
-		f_file_write.open(project_name.c_str(),ios::out);
-		while(it!=vcproj_content.end()&&f_file_write)
-		{
-			cout<<it->data()<<endl;
-			f_file_write<<it->data()<<endl;
-			++it;
+		if (229==line_count)
+		{//如果行数等于229，则说明环境已经配置好了，不再处理，否则配置文件
+			cout<<"该文件已经配置过，请勿重复配置"<<endl;
 		}
-		f_file_write.close();
+		else
+		{//没有229行则处理
+			vector<const string>::iterator it=vcproj_content.begin();
+			string blank="				";//xml文件里对齐，前面有空白
+			vcproj_content.insert(it+43,blank+additional_include_directories);
+			vcproj_content[44]=blank+preprocessor_definitions;					//替换原有行而不是插入新行
+			vcproj_content.insert(it+63,blank+additional_dependencies);
+			vcproj_content.insert(it+65,blank+additional_library_directories);
+			vcproj_content.insert(it+66,blank+ingnore_default_library_names);
+
+			f_file_write.open(project_name.c_str(),ios::out);
+			while(it!=vcproj_content.end()&&f_file_write)
+			{
+				cout<<it->data()<<endl;
+				f_file_write<<it->data()<<endl;
+				++it;
+			}
+			f_file_write.close();
+		}	
 	}
 
 	return 0;
