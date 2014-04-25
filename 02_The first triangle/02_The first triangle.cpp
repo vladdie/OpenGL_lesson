@@ -17,6 +17,8 @@ GLFWwindow* window;		//global variable
 #include <glm/glm.hpp>
 using namespace glm;
 
+#include "common/shader.hpp"
+
 int _tmain(int argc, _TCHAR* argv[])
 {
 	//Initialize GLFW
@@ -27,7 +29,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	}
 
 	//Open a window and create its OpenGL contex
-	glfwWindowHint(GLFW_SAMPLES,4); //4x antialiasing
+	glfwWindowHint(GLFW_SAMPLES,4); //4x antialiasing 4±¶·´×ßÑù
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR,4);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR,0);
 	glfwWindowHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE); //We don't want the old OpenGL
@@ -57,6 +59,9 @@ int _tmain(int argc, _TCHAR* argv[])
 	glGenVertexArrays(1,&VertexArrayID);
 	glBindVertexArray(VertexArrayID);
 	
+	//Create and compile our GLSL program from the shaders
+	GLuint programID=LoadShaders("SimpleVertexShader.vertexshader","SimpleFragmentShader.fragmentshader");
+
 	//An array of 3 vectors which represents 3 vertices{X,Y,Z}
 	static const GLfloat g_vertex_buffer_data[]={
 		-1.0f,-1.0f,0.0f,
@@ -81,7 +86,10 @@ int _tmain(int argc, _TCHAR* argv[])
 		//Draw whatever we want,first attribute buffer:vertices
 
 		//Clear the screen
-		glClear(GL_COLOR_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+		//Use our shader
+		glUseProgram(programID);
 
 		glEnableVertexAttribArray(0);
 		glBindBuffer(GL_ARRAY_BUFFER,vertexbuffer);
@@ -104,6 +112,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	while (glfwGetKey(window,GLFW_KEY_ESCAPE)!=GLFW_PRESS && glfwWindowShouldClose(window)==0);
 	
 	glfwTerminate();
+
 	return 0;
 }
 
