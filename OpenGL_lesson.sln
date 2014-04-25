@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01_firstWindow", "01_firstWindow\01_firstWindow.vcproj", "{E48700F7-8233-4F27-867F-0D3E316805C5}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02_The first triangle", "02_The first triangle\02_The first triangle.vcproj", "{9458029A-9A23-40FE-812E-579CE641FF8B}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03_Matrices", "03_Matrices\03_Matrices.vcproj", "{F1F8F261-99CA-4008-B968-1B14DAFE16B8}"
@@ -13,16 +11,14 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "Test\Test.vcproj", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "00_Environment", "00_Environment\00_Environment.vcproj", "{61CB73AE-2671-40A8-BF25-DEFD374274C0}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01_First window", "01_First window\01_First window.vcproj", "{02D33EB3-A709-42DF-ACCE-C18CDEB61153}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E48700F7-8233-4F27-867F-0D3E316805C5}.Debug|Win32.ActiveCfg = Debug|Win32
-		{E48700F7-8233-4F27-867F-0D3E316805C5}.Debug|Win32.Build.0 = Debug|Win32
-		{E48700F7-8233-4F27-867F-0D3E316805C5}.Release|Win32.ActiveCfg = Release|Win32
-		{E48700F7-8233-4F27-867F-0D3E316805C5}.Release|Win32.Build.0 = Release|Win32
 		{9458029A-9A23-40FE-812E-579CE641FF8B}.Debug|Win32.ActiveCfg = Debug|Win32
 		{9458029A-9A23-40FE-812E-579CE641FF8B}.Debug|Win32.Build.0 = Debug|Win32
 		{9458029A-9A23-40FE-812E-579CE641FF8B}.Release|Win32.ActiveCfg = Release|Win32
@@ -43,6 +39,10 @@ Global
 		{61CB73AE-2671-40A8-BF25-DEFD374274C0}.Debug|Win32.Build.0 = Debug|Win32
 		{61CB73AE-2671-40A8-BF25-DEFD374274C0}.Release|Win32.ActiveCfg = Release|Win32
 		{61CB73AE-2671-40A8-BF25-DEFD374274C0}.Release|Win32.Build.0 = Release|Win32
+		{02D33EB3-A709-42DF-ACCE-C18CDEB61153}.Debug|Win32.ActiveCfg = Debug|Win32
+		{02D33EB3-A709-42DF-ACCE-C18CDEB61153}.Debug|Win32.Build.0 = Debug|Win32
+		{02D33EB3-A709-42DF-ACCE-C18CDEB61153}.Release|Win32.ActiveCfg = Release|Win32
+		{02D33EB3-A709-42DF-ACCE-C18CDEB61153}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

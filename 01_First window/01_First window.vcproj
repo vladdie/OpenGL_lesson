@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="00_Environment"
-	ProjectGUID="{61CB73AE-2671-40A8-BF25-DEFD374274C0}"
-	RootNamespace="My00_Environment"
+	Name="01_First window"
+	ProjectGUID="{02D33EB3-A709-42DF-ACCE-C18CDEB61153}"
+	RootNamespace="My01_First window"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>
@@ -41,7 +41,8 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
+				AdditionalIncludeDirectories="C:\Users\Administrator\Documents\Visual Studio 2008\Projects\OpenGL_lesson\include"
+				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;GLEW_STATIC"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -60,7 +61,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="glfw3dll.lib opengl32.lib glu32.lib glew32s.lib"
 				LinkIncremental="2"
+				AdditionalLibraryDirectories="C:\Users\Administrator\Documents\Visual Studio 2008\Projects\OpenGL_lesson\lib"
+				IgnoreDefaultLibraryNames="msvcrt;LIBCMT"
 				GenerateDebugInformation="true"
 				SubSystem="1"
 				TargetMachine="1"
@@ -171,7 +175,7 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\00_Environment.cpp"
+				RelativePath=".\01_First window.cpp"
 				>
 			</File>
 			<File
@@ -216,7 +220,7 @@
 			>
 		</Filter>
 		<File
-			RelativePath=".\ReadMe.txt"
+			RelativePath=".\ReadMe.md"
 			>
 		</File>
 	</Files>

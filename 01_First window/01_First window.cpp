@@ -31,7 +31,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	glfwWindowHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE); //We don't want the old OpenGL
 
 	//Open a window and create its OpenGL context
-	window=glfwCreateWindow(1920,1080,"01_firstWindow",NULL,NULL);
+	window=glfwCreateWindow(1920,1080,"01_First window",NULL,NULL);
 	if (window==NULL)
 	{
 		cerr<<"Failed to open GLFW window.Maybe your GPU is not supported!"<<endl;
