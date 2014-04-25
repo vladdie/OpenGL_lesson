@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="00_Environment"
-	ProjectGUID="{61CB73AE-2671-40A8-BF25-DEFD374274C0}"
-	RootNamespace="My00_Environment"
+	Name="03_Matrices"
+	ProjectGUID="{F1F8F261-99CA-4008-B968-1B14DAFE16B8}"
+	RootNamespace="My03_Matrices"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>
@@ -171,7 +171,7 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\00_Environment.cpp"
+				RelativePath=".\03_Matrices.cpp"
 				>
 			</File>
 			<File

@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="00_config"
-	ProjectGUID="{9026D959-A530-464A-8F9B-C8DDA510B8BB}"
-	RootNamespace="My00_config"
+	Name="00_Configuration"
+	ProjectGUID="{E51F8CB0-0566-4C8F-A925-CEE9A220233E}"
+	RootNamespace="My00_Configuration"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>
@@ -21,7 +21,7 @@
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
-			CharacterSet="2"
+			CharacterSet="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -41,11 +41,11 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\\include"
+				AdditionalIncludeDirectories="..\include"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;GLEW_STATIC"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
-				RuntimeLibrary="0"
+				RuntimeLibrary="3"
 				UsePrecompiledHeader="2"
 				WarningLevel="3"
 				DebugInformationFormat="4"
@@ -63,8 +63,8 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="glfw3dll.lib opengl32.lib glu32.lib glew32s.lib"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="..\\lib"
-				IgnoreDefaultLibraryNames="msvcrt"
+				AdditionalLibraryDirectories="..\lib"
+				IgnoreDefaultLibraryNames="LIBCMT;msvcrt"
 				GenerateDebugInformation="true"
 				SubSystem="1"
 				TargetMachine="1"
@@ -175,7 +175,7 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\00_config.cpp"
+				RelativePath=".\00_Configuration.cpp"
 				>
 			</File>
 			<File
@@ -220,7 +220,7 @@
 			>
 		</Filter>
 		<File
-			RelativePath=".\ReadMe.txt"
+				RelativePath=".\ReadMe.md"
 			>
 		</File>
 	</Files>
