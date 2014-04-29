@@ -1,4 +1,4 @@
-// 03_Matrices.cpp : ¶¨Òå¿ØÖÆÌ¨Ó¦ÓÃ³ÌĞòµÄÈë¿Úµã¡£
+// 03_Matrices.cpp : å®šä¹‰æ§åˆ¶å°åº”ç”¨ç¨‹åºçš„å…¥å£ç‚¹ã€‚
 //
 
 #include "stdafx.h"
@@ -60,7 +60,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	//Get a handle for our "MVP" uniform
 	GLuint MatrixID=glGetUniformLocation(programID,"MVP");
 
-	//Projection matrix:45¡ã Field of view,4:3 ratio,display range: 0.1 <-> 100 units
+	//Projection matrix:45Â° Field of view,4:3 ratio,display range: 0.1 <-> 100 units
 	glm::mat4 Projection=glm::perspective(45.0f,16.0f/9.0f,0.1f,100.0f);
 
 	//Camera matrix
@@ -93,11 +93,11 @@ int _tmain(int argc, _TCHAR* argv[])
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		glUseProgram(programID);
-		
+
 		//Send our transformattion to the currently bound shader
 		//in the "MVP" uniform
 		glUniformMatrix4fv(MatrixID,1,GL_FALSE,&MVP[0][0]);
-		
+
 		//First attribute buffer:vertices
 		glEnableVertexAttribArray(0);
 		glBindBuffer(GL_ARRAY_BUFFER,vertex_buffer);
@@ -106,7 +106,7 @@ int _tmain(int argc, _TCHAR* argv[])
 			3,	//size
 			GL_FLOAT,	//type
 			GL_FALSE,	//normalized
-			0,	//stride,¼´ÌøÔ¾
+			0,	//stride,å³è·³è·ƒ
 			(void*)0	//array buffer offset
 			);
 
@@ -131,4 +131,3 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	return 0;
 }
-
