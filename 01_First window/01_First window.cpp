@@ -1,4 +1,4 @@
-// 01_firstWindow.cpp : ¶¨Òå¿ØÖÆÌ¨Ó¦ÓÃ³ÌĞòµÄÈë¿Úµã¡£
+// 01_firstWindow.cpp : å®šä¹‰æ§åˆ¶å°åº”ç”¨ç¨‹åºçš„å…¥å£ç‚¹ã€‚
 //
 
 #include "stdafx.h"
@@ -45,7 +45,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		cerr<<"Failed to initialize GLEW"<<endl;
 		return -1;
 	}
-	
+
 	//Ensure we can capture the escape key being pressed below
 	glfwSetInputMode(window,GLFW_STICKY_KEYS,GL_TRUE);
 
@@ -60,10 +60,9 @@ int _tmain(int argc, _TCHAR* argv[])
 		glfwPollEvents();
 	}//Check if the ESC key was pressed or the window was closed 
 	while (glfwGetKey(window,GLFW_KEY_ESCAPE)!=GLFW_PRESS && glfwWindowShouldClose(window)==0);
-	
+
 	//Close OpenGL window and terminate GLFW
 	glfwTerminate();
 
 	return 0;
 }
-
