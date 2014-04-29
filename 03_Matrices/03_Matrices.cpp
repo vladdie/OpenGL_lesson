@@ -55,7 +55,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	glBindVertexArray(VertexArrayID);
 
 	//Create and compile our GLSL program from the shaders
-	GLuint programID=LoadShaders("SimpleTransform.vertexshader","SimpleColor.fragmentshader");
+	GLuint programID=LoadShaders("SimpleTransform.vertexshader","SingleColor.fragmentshader");
 
 	//Get a handle for our "MVP" uniform
 	GLuint MatrixID=glGetUniformLocation(programID,"MVP");
@@ -67,7 +67,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	glm::mat4 View=glm::lookAt(
 		glm::vec3(4,3,3),	//Camera is at (4,3,3),in World Space
 		glm::vec3(0,0,0),	//and look at the origin (0,0,0)
-		glm::vec3(0,1,0),	//Head is up (set to 0,-1,0 to look upside-down)
+		glm::vec3(0,1,0)	//Head is up (set to 0,-1,0 to look upside-down)
 		);		
 	//Model matrix: an identity matrix (model will be at the origin)
 	glm::mat4 Model= glm::mat4(1.0f);	//Changes for each model!
@@ -104,7 +104,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		glVertexAttribPointer(
 			0,	//attribute. No particular reason for 0,but must match the layout in the shader
 			3,	//size
-			GLfloat,	//type
+			GL_FLOAT,	//type
 			GL_FALSE,	//normalized
 			0,	//stride,¼´ÌøÔ¾
 			(void*)0	//array buffer offset
