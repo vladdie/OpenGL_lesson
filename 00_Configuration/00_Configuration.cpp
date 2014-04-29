@@ -1,4 +1,4 @@
-// 00_Configuration.cpp : ¶¨Òå¿ØÖÆÌ¨Ó¦ÓÃ³ÌĞòµÄÈë¿Úµã¡£
+// 00_Configuration.cpp : å®šä¹‰æ§åˆ¶å°åº”ç”¨ç¨‹åºçš„å…¥å£ç‚¹ã€‚
 //
 
 #include "stdafx.h"
@@ -67,4 +67,3 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	return 0;
 }
-
