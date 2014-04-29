@@ -9,6 +9,7 @@
 
 **2.修改项目下的*.vcproj文件**
 &emsp;&emsp;直接改对应行的内容，新建一个工程*.vcproj有225行，配置好环境后有229行，所以对比不同很容易得到需要插入修改的行,对比发现配置好的文件内容不同的地方如下：
+
 > 
 44	AdditionalIncludeDirectories="&quot;C:\Users\Administrator\Documents\Visual Studio 2008\Projects\OpenGL_lesson\include&quot;"
 45	PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;GLEW_STATIC"
