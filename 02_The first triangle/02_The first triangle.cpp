@@ -1,4 +1,4 @@
-// 02_The first triangle.cpp : ¶¨Òå¿ØÖÆÌ¨Ó¦ÓÃ³ÌÐòµÄÈë¿Úµã¡£
+// 02_The first triangle.cpp : å®šä¹‰æŽ§åˆ¶å°åº”ç”¨ç¨‹åºçš„å…¥å£ç‚¹ã€‚
 //
 
 #include "stdafx.h"
@@ -29,7 +29,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	}
 
 	//Open a window and create its OpenGL contex
-	glfwWindowHint(GLFW_SAMPLES,4); //4x antialiasing 4±¶·´×ßÑù
+	glfwWindowHint(GLFW_SAMPLES,4); //4x antialiasing 4å€åèµ°æ ·
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR,4);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR,0);
 	glfwWindowHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE); //We don't want the old OpenGL
@@ -54,11 +54,11 @@ int _tmain(int argc, _TCHAR* argv[])
 	glfwSetInputMode(window,GLFW_STICKY_KEYS,GL_TRUE);
 
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
-	//OpenGLÉÏÏÂÎÄ´´½¨³É¹¦,´´½¨¶¥µãÊý×é¶ÔÏó(VAO)
+	//OpenGLä¸Šä¸‹æ–‡åˆ›å»ºæˆåŠŸ,åˆ›å»ºé¡¶ç‚¹æ•°ç»„å¯¹è±¡(VAO)
 	GLuint VertexArrayID;
 	glGenVertexArrays(1,&VertexArrayID);
 	glBindVertexArray(VertexArrayID);
-	
+
 	//Create and compile our GLSL program from the shaders
 	GLuint programID=LoadShaders("SimpleVertexShader.vertexshader","SimpleFragmentShader.fragmentshader");
 
@@ -68,8 +68,8 @@ int _tmain(int argc, _TCHAR* argv[])
 		1.0f,-1.0f,0.0f,
 		0.0f,1.0f,0.0f,
 	};
-	
-	//ÏÂÒ»²½£¬Í¨¹ý»º³åÇø°ÑÈý½ÇÐÎ´«¸øOpenGL
+
+	//ä¸‹ä¸€æ­¥ï¼Œé€šè¿‡ç¼“å†²åŒºæŠŠä¸‰è§’å½¢ä¼ ç»™OpenGL
 
 	//This  will identify our vertex buffer
 	GLuint vertexbuffer;
@@ -98,19 +98,19 @@ int _tmain(int argc, _TCHAR* argv[])
 			3,		//size
 			GL_FLOAT,//type
 			GL_FALSE,//normalized?
-			0,		//stride,ÌøÔ¾£¬0²»Ìø
+			0,		//stride,è·³è·ƒï¼Œ0ä¸è·³
 			(void*)0//array buffer offset
 			);
 		//Draw the triangle!
 		glDrawArrays(GL_TRIANGLES,0,3);// Starting from vertex 0;3 vertices total ->1 triangle
 		glDisableVertexAttribArray(0);
-		
+
 		//Swap buffers
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}//Check if the ESC key was pressed or the window was closed 
 	while (glfwGetKey(window,GLFW_KEY_ESCAPE)!=GLFW_PRESS && glfwWindowShouldClose(window)==0);
-	
+
 	//Cleanup VBO
 	glDeleteBuffers(1,&vertexbuffer);
 	glDeleteVertexArrays(1,&VertexArrayID);
@@ -120,4 +120,3 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	return 0;
 }
-
