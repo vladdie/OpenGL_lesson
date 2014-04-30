@@ -51,6 +51,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	ifstream f_file_read;
 	ofstream f_file_write;
 	cout<<"输入项目的名字,例如00_config："<<endl;
+	//项目可能有空格，所以修改为getline()
 	getline(cin,project_name);
 
 	//重命名ReadMe.txt文件
