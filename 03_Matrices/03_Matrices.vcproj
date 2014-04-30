@@ -61,7 +61,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="glfw3dll.lib opengl32.lib glu32.lib glew32s.lib"
+				AdditionalDependencies="glfw3.lib opengl32.lib glu32.lib glew32s.lib"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="..\lib"
 				IgnoreDefaultLibraryNames="LIBCMT;msvcrt"
@@ -230,10 +230,6 @@
 				RelativePath=".\SingleColor.fragmentshader"
 				>
 			</File>
-			<File
-				RelativePath=".\VAO.md"
-				>
-			</File>
 		</Filter>
 		<File
 			RelativePath=".\OpenGL GLSL.md"
@@ -241,6 +237,10 @@
 		</File>
 		<File
 			RelativePath=".\ReadMe.md"
+			>
+		</File>
+		<File
+			RelativePath=".\VAO.md"
 			>
 		</File>
 	</Files>
