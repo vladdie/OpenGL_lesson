@@ -1,4 +1,4 @@
-// 00_Environment.cpp : å®šä¹‰æ§åˆ¶å°åº”ç”¨ç¨‹åºçš„å…¥å£ç‚¹ã€‚
+// 00_Environment.cpp : ¶¨Òå¿ØÖÆÌ¨Ó¦ÓÃ³ÌĞòµÄÈë¿Úµã¡£
 //
 
 #include "stdafx.h"
@@ -10,13 +10,13 @@
 #include <io.h>
 using namespace std;
 
-//éœ€è¦æ’å…¥çš„å†…å®¹,æ³¨æ„stringä¸­å¦‚æœå¸¦å¼•å·è¦ç”¨è½¬ä¹‰å­—ç¬¦'\'
-const string additional_include_directories="AdditionalIncludeDirectories=\"..\\include\"";		//"é™„åŠ åŒ…å«ç›®å½•" å¯ä»¥ä½¿ç”¨ç»å¯¹è·¯å¾„ï¼Œè¿™é‡Œç”¨çš„æ˜¯ç›¸å¯¹è·¯å¾„
-const string preprocessor_definitions="PreprocessorDefinitions=\"WIN32;_DEBUG;_CONSOLE;GLEW_STATIC\"";	//"é¢„å¤„ç†å™¨å®šä¹‰" å¤šä¸ªç”¨åˆ†å·éš”å¼€
-const string additional_dependencies="AdditionalDependencies=\"glfw3dll.lib opengl32.lib glu32.lib glew32s.lib\"";	//"é™„åŠ ä¾èµ–åº“"    å¤šä¸ªç”¨ç©ºæ ¼éš”å¼€
-const string additional_library_directories="AdditionalLibraryDirectories=\"..\\lib\"";			//"é™„åŠ åº“ç›®å½•"    åŒç†ï¼Œç›¸å¯¹è·¯å¾„
-const string ingnore_default_library_names="IgnoreDefaultLibraryNames=\"LIBCMT;msvcrt\"";		//"å¿½ç•¥ç‰¹å®šåº“"    å¤šä¸ªç”¨åˆ†å·éš”å¼€
-const string relative_path="RelativePath=\".\\ReadMe.md\"";										//æŠŠReadMe.txtæ”¹ä¸ºReadMe.mdï¼Œé…ç½®æ–‡ä»¶ç›¸åº”åœ°æ–¹ä¹Ÿè¦æ”¹
+//ĞèÒª²åÈëµÄÄÚÈİ,×¢ÒâstringÖĞÈç¹û´øÒıºÅÒªÓÃ×ªÒå×Ö·û'\'
+const string additional_include_directories="AdditionalIncludeDirectories=\"..\\include\"";		//"¸½¼Ó°üº¬Ä¿Â¼" ¿ÉÒÔÊ¹ÓÃ¾ø¶ÔÂ·¾¶£¬ÕâÀïÓÃµÄÊÇÏà¶ÔÂ·¾¶
+const string preprocessor_definitions="PreprocessorDefinitions=\"WIN32;_DEBUG;_CONSOLE;GLEW_STATIC\"";	//"Ô¤´¦ÀíÆ÷¶¨Òå" ¶à¸öÓÃ·ÖºÅ¸ô¿ª
+const string additional_dependencies="AdditionalDependencies=\"glfw3dll.lib opengl32.lib glu32.lib glew32s.lib\"";	//"¸½¼ÓÒÀÀµ¿â"    ¶à¸öÓÃ¿Õ¸ñ¸ô¿ª
+const string additional_library_directories="AdditionalLibraryDirectories=\"..\\lib\"";			//"¸½¼Ó¿âÄ¿Â¼"    Í¬Àí£¬Ïà¶ÔÂ·¾¶
+const string ingnore_default_library_names="IgnoreDefaultLibraryNames=\"LIBCMT;msvcrt\"";		//"ºöÂÔÌØ¶¨¿â"    ¶à¸öÓÃ·ÖºÅ¸ô¿ª
+const string relative_path="RelativePath=\".\\ReadMe.md\"";										//°ÑReadMe.txt¸ÄÎªReadMe.md£¬ÅäÖÃÎÄ¼şÏàÓ¦µØ·½Ò²Òª¸Ä
 
 bool Rename_ReadMe(const string &project_name)
 {
@@ -29,7 +29,7 @@ bool Rename_ReadMe(const string &project_name)
 		file_name.replace(dot_index+1,file_path_length-1,"md");
 		if (!rename(file_ori.c_str(),file_name.c_str()))
 		{
-			cout<<"Sucess to rename the file ReadMe.txt to ReadMe.md"<<endl;
+			cout<<"Success to rename the file ReadMe.txt to ReadMe.md"<<endl;
 			return true;
 		}
 		else
@@ -47,26 +47,27 @@ bool Rename_ReadMe(const string &project_name)
 int _tmain(int argc, _TCHAR* argv[])
 {
 	string project_name;
-	vector<const string> vcproj_content;//ä¿å­˜é…ç½®æ–‡ä»¶å†…å®¹
+	vector<const string> vcproj_content;//±£´æÅäÖÃÎÄ¼şÄÚÈİ
 	ifstream f_file_read;
 	ofstream f_file_write;
-	cout<<"è¾“å…¥é¡¹ç›®çš„åå­—,ä¾‹å¦‚00_configï¼š"<<endl;
-	cin>>project_name;
+	cout<<"ÊäÈëÏîÄ¿µÄÃû×Ö,ÀıÈç00_config£º"<<endl;
+	getline(cin,project_name);
 
-	//é‡å‘½åReadMe.txtæ–‡ä»¶
+	//ÖØÃüÃûReadMe.txtÎÄ¼ş
 	Rename_ReadMe(project_name);
-	project_name="..\\"+project_name+"\\"+project_name+".vcproj";						//xxx.vcprojæ–‡ä»¶çš„è·¯å¾„
+	project_name="..\\"+project_name+"\\"+project_name+".vcproj";						//xxx.vcprojÎÄ¼şµÄÂ·¾¶
 	f_file_read.open(project_name.c_str(),ios::in);
 	if (!f_file_read)
 	{
-		cout<<"æ–‡ä»¶æ‰“å¼€å¤±è´¥ï¼æ£€æŸ¥ç›®å½•åŠæ–‡ä»¶è·¯å¾„æ˜¯å¦æ­£ç¡®æˆ–è€…æ­£åœ¨ä½¿ç”¨ã€‚"<<endl;
+		cout<<"ÎÄ¼ş´ò¿ªÊ§°Ü£¡¼ì²éÄ¿Â¼¼°ÎÄ¼şÂ·¾¶ÊÇ·ñÕıÈ·»òÕßÕıÔÚÊ¹ÓÃ¡£"<<endl;
+		cin.get();
 		return -1;
 	}
 	else
 	{
-		//é€è¡Œè¯»å–*.vcprojæ–‡ä»¶ä¸­çš„å†…å®¹
+		//ÖğĞĞ¶ÁÈ¡*.vcprojÎÄ¼şÖĞµÄÄÚÈİ
 		string line;
-		int line_count=0;//ç»Ÿè®¡è¡Œæ•°
+		int line_count=0;//Í³¼ÆĞĞÊı
 		while(getline(f_file_read,line))
 		{
 			vcproj_content.push_back(line);
@@ -75,15 +76,16 @@ int _tmain(int argc, _TCHAR* argv[])
 		f_file_read.close();
 
 		if (229==line_count)
-		{//å¦‚æœè¡Œæ•°ç­‰äº229ï¼Œåˆ™è¯´æ˜ç¯å¢ƒå·²ç»é…ç½®å¥½äº†ï¼Œä¸å†å¤„ç†ï¼Œå¦åˆ™é…ç½®æ–‡ä»¶
-			cout<<"è¯¥æ–‡ä»¶å·²ç»é…ç½®è¿‡ï¼Œè¯·å‹¿é‡å¤é…ç½®"<<endl;
+		{//Èç¹ûĞĞÊıµÈÓÚ229£¬ÔòËµÃ÷»·¾³ÒÑ¾­ÅäÖÃºÃÁË£¬²»ÔÙ´¦Àí£¬·ñÔòÅäÖÃÎÄ¼ş
+			cout<<"¸ÃÎÄ¼şÒÑ¾­ÅäÖÃ¹ı£¬ÇëÎğÖØ¸´ÅäÖÃ"<<endl;
+			cin.get();
 		}
 		else
-		{//æ²¡æœ‰229è¡Œåˆ™å¤„ç†
-			string blank="				";//xmlæ–‡ä»¶é‡Œå¯¹é½ï¼Œå‰é¢æœ‰ç©ºç™½
+		{//Ã»ÓĞ229ĞĞÔò´¦Àí
+			string blank="				";//xmlÎÄ¼şÀï¶ÔÆë£¬Ç°ÃæÓĞ¿Õ°×
 			vector<const string>::iterator it=vcproj_content.begin();
 			vcproj_content.insert(it+43,blank+additional_include_directories);
-			vcproj_content[44]=blank+preprocessor_definitions;					//æ›¿æ¢åŸæœ‰è¡Œè€Œä¸æ˜¯æ’å…¥æ–°è¡Œ
+			vcproj_content[44]=blank+preprocessor_definitions;					//Ìæ»»Ô­ÓĞĞĞ¶ø²»ÊÇ²åÈëĞÂĞĞ
 			vcproj_content.insert(it+63,blank+additional_dependencies);
 			vcproj_content.insert(it+65,blank+additional_library_directories);
 			vcproj_content.insert(it+66,blank+ingnore_default_library_names);
