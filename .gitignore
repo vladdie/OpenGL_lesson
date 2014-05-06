@@ -215,3 +215,4 @@ pip-log.txt
 .mr.developer.cfg
 Test/main.cpp
 Test/Test.vcproj
+Test/Test.cpp

@@ -2,7 +2,7 @@
 //
 
 #include "stdafx.h"
-
+#include <time.h>
 #include <iostream>
 using namespace std;
 
@@ -115,7 +115,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	};
 	
 	//One color for each vertex.They were generated randomly.
-	static const GLfloat g_color_buffer_data[]={
+/*	static const GLfloat g_color_buffer_data[]={
 		0.583f,  0.771f,  0.014f,
 		0.609f,  0.115f,  0.436f,
 		0.327f,  0.483f,  0.844f,
@@ -153,6 +153,16 @@ int _tmain(int argc, _TCHAR* argv[])
 		0.820f,  0.883f,  0.371f,
 		0.982f,  0.099f,  0.879f
 	};
+*/
+	//Generate the color values randomly
+	static GLfloat g_color_buffer_data[12*3*3];
+	srand((unsigned)time(NULL));
+	for (int v = 0; v < 12*3 ; v++)
+	{
+		g_color_buffer_data[3*v+0] =(float) rand()/RAND_MAX;
+		g_color_buffer_data[3*v+1] =(float) rand()/RAND_MAX;
+		g_color_buffer_data[3*v+2] =(float) rand()/RAND_MAX;
+	}
 	GLuint vertexbuffer;
 	glGenBuffers(1,&vertexbuffer);
 	glBindBuffer(GL_ARRAY_BUFFER,vertexbuffer);

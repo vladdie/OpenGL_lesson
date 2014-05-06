@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03_Matrices", "03_Matrices\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04_A colored cube", "04_A colored cube\04_A colored cube.vcproj", "{9B212E9A-5A2C-43C3-B191-DC85E3EA574B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "Test\Test.vcproj", "{7F6D172F-332E-4986-A7E5-E756258F27C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -43,6 +45,10 @@ Global
 		{9B212E9A-5A2C-43C3-B191-DC85E3EA574B}.Debug|Win32.Build.0 = Debug|Win32
 		{9B212E9A-5A2C-43C3-B191-DC85E3EA574B}.Release|Win32.ActiveCfg = Release|Win32
 		{9B212E9A-5A2C-43C3-B191-DC85E3EA574B}.Release|Win32.Build.0 = Release|Win32
+		{7F6D172F-332E-4986-A7E5-E756258F27C6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7F6D172F-332E-4986-A7E5-E756258F27C6}.Debug|Win32.Build.0 = Debug|Win32
+		{7F6D172F-332E-4986-A7E5-E756258F27C6}.Release|Win32.ActiveCfg = Release|Win32
+		{7F6D172F-332E-4986-A7E5-E756258F27C6}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
