@@ -2,10 +2,10 @@
     控制台应用程序：04_A colored cube 项目概述
 ========================================================================
 ### 涉及到一些函数
-> [GL*Buffers*()](GLBuffers.md)
-[glfwSetInputMode()](glfwSetInputMode.md)
-[glUniformMatrix4fv()](glUniformMatrix4fv.md)
-[glVertexAttribPointer()](glVertexAttribPointer.md)
+* [GL*Buffers*()](GLBuffers.md)
+* [glfwSetInputMode()](glfwSetInputMode.md)
+* [glUniformMatrix4fv()](glUniformMatrix4fv.md)
+* [glVertexAttribPointer()](glVertexAttribPointer.md)
 
 ### 分两步，第一步画一个红色的立方体，GLSL直接用03_Matrices的就行
 运行出来的效果图保存在img文件夹中
