@@ -46,7 +46,7 @@
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
-				UsePrecompiledHeader="2"
+				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				DebugInformationFormat="4"
 			/>
@@ -179,6 +179,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\include\common\shader.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\stdafx.cpp"
 				>
 				<FileConfiguration
@@ -218,9 +222,33 @@
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
+			<File
+				RelativePath=".\ColorFragmentShader.fragmentshader"
+				>
+			</File>
+			<File
+				RelativePath=".\TransformVertexShader.vertexshader"
+				>
+			</File>
 		</Filter>
 		<File
-				RelativePath=".\ReadMe.md"
+			RelativePath=".\GLBuffers.md"
+			>
+		</File>
+		<File
+			RelativePath=".\glfwSetInputMode.md"
+			>
+		</File>
+		<File
+			RelativePath=".\glUniformMatrix4fv.md"
+			>
+		</File>
+		<File
+			RelativePath=".\glVertexAttribPointer.md"
+			>
+		</File>
+		<File
+			RelativePath=".\ReadMe.md"
 			>
 		</File>
 	</Files>
