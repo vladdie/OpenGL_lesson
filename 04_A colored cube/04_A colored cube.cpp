@@ -165,6 +165,11 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	do 
 	{
+		//Enable depth test
+		glEnable(GL_DEPTH_TEST);
+		//Accept fragment if it coloser to the camera than the former one
+		glDepthFunc(GL_LESS);
+
 		//Clear the screen
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);	//清除颜色缓冲以及深度缓冲
 
