@@ -30,7 +30,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR,0);
 	glfwWindowHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
 
-	window=glfwCreateWindow(800,800,"04_A colored cube",NULL,NULL);
+	//window=glfwCreateWindow(800,600,"04_A colored cube",glfwGetPrimaryMonitor(),NULL);
+	window=glfwCreateWindow(800,600,"04_A colored cube",NULL,NULL);
 	if (window==NULL)
 	{
 		cerr<<"Failed to open GLFW window.Maybe your GPU is not supported!"<<endl;
