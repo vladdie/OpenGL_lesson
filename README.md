@@ -21,4 +21,8 @@
 		glew32s.lib
 	5.忽略特定库，添加LIBCMT
 
-**NOTE:**glfw3dll.lib需要和glfw3.dll一起用，所以我采用的是直接使用glfw3.lib
+**NOTE:** glfw3dll.lib需要和glfw3.dll一起用，所以我采用的是直接使用glfw3.lib
+本学习笔记出处借鉴于下面两个地方
+* 原教程官方网站[http://www.opengl-tutorial.org/](http://www.opengl-tutorial.org/)
+* github翻译教程[OpenGL_3_3_Tutorial_Translation](https://github.com/cybercser/OpenGL_3_3_Tutorial_Translation.git)
+
