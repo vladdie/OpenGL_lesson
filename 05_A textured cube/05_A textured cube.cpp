@@ -14,7 +14,7 @@ GLFWwindow* window;
 #include <glm/gtc/matrix_transform.hpp>
 using namespace glm;
 
-#include <common/loadBMP_custom.hpp>
+#include <common/texture.hpp>
 #include <common/shader.hpp>
 
 int _tmain(int argc, _TCHAR* argv[])
@@ -69,7 +69,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	glm::mat4 Projection=glm::perspective(45.0f,4.0f/3.0f,0.1f,100.0f);
 	//Camera matrix
 	glm::mat4 View=glm::lookAt(
-		glm::vec3(4,3,-3),
+		glm::vec3(4,3,3),
 		glm::vec3(0,0,0),
 		glm::vec3(0,1,0)
 		);
@@ -79,7 +79,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	glm::mat4 MVP=Projection*View*Model;
 	
 	//Load the texture using the methods we write just now
-	GLuint Texture=loadBMP_custom("uvtemplate.bmp");
+	//GLuint Texture=loadBMP_custom("uvtemplate.bmp");
+	GLuint Texture=loadDDS("uvtemplate.DDS");
 
 	//Get a handle for our "myTextureSampler" uniform
 	GLuint TextureID=glGetUniformLocation(programID,"myTextureSampler");

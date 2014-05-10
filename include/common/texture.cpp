@@ -1,10 +1,9 @@
-#include <cstring>
+#include "common/texture.hpp"
+
 #include <fstream>
+#include <cstring>
 #include <iostream>
 using namespace std;
-
-#include <gl/glew.h>
-#include "common/loadBMP_custom.hpp"
 
 GLuint loadBMP_custom(const char * imagepath)
 {
@@ -44,7 +43,7 @@ GLuint loadBMP_custom(const char * imagepath)
 		cerr<<"Not a correct BMP file!"<<endl;
 		return 0;
 	}
-	
+
 	//Make sure this is a 24bpp file
 	if (*(int*)&(header[0x1E])!=0)
 	{	//压缩说明，为0说明不压缩
@@ -82,7 +81,7 @@ GLuint loadBMP_custom(const char * imagepath)
 
 	//Everything is in memory now, the file can be closed
 	file.close();
-	
+
 	//Create one OpenGL texture
 	GLuint textureID;
 	glGenTextures(1,&textureID);
@@ -109,4 +108,93 @@ GLuint loadBMP_custom(const char * imagepath)
 
 	return textureID;
 
+}
+
+#define FOURCC_DXT1 0x31545844 // Equivalent to "DXT1" in ASCII
+#define FOURCC_DXT3 0x33545844 // Equivalent to "DXT3" in ASCII
+#define FOURCC_DXT5 0x35545844 // Equivalent to "DXT5" in ASCII
+
+GLuint loadDDS(const char* imagepath)
+{
+	unsigned char header[124];
+
+	//try to open the file
+	ifstream file;
+	file.open(imagepath,ios::in | ios::binary);
+	if (file.fail())
+	{
+		cerr<<"Open the file failed!"<<endl;
+		return 0;
+	}
+
+	//verify the type of file
+	char filecode[4];
+	file.read(filecode,4);	//0~3
+	//cout<<file.tellg()<<endl; //the result is 4
+	if(strncmp(filecode,"DDS ",4)!=0)
+	{
+		file.close();
+		return 0;
+	}
+
+	//get the surface desc,不包括"DDS "(0~3)，从4开始读
+	file.read((char*)header,124);
+
+	unsigned int height =*(unsigned int*)&(header[8]);
+	unsigned int width =*(unsigned int*)&(header[12]);
+	unsigned int linearSize =*(unsigned int*)&(header[16]);
+	unsigned int mipMapCount =*(unsigned int*)&(header[24]);
+	unsigned int fourCC =*(unsigned int*)&(header[80]);
+
+	//文件头之后是真正的数据：紧接着是mipmap层级
+	unsigned char* buffer;
+	unsigned int bufsize;
+	//how big is it going to be including all mipmaps?
+	bufsize = mipMapCount >1 ? linearSize*2 : linearSize;
+	buffer = new unsigned char[bufsize];
+	file.read((char*)buffer,bufsize);
+	file.close();
+
+	//处理三种格式：DXT1、DXT3,DXT5
+	unsigned int components = (fourCC == FOURCC_DXT1) ? 3:4;
+	unsigned int format;
+	switch (fourCC)
+	{
+	case FOURCC_DXT1:
+		format=GL_COMPRESSED_RGBA_S3TC_DXT1_EXT;
+		break;
+	case FOURCC_DXT3:
+		format=GL_COMPRESSED_RGBA_S3TC_DXT3_EXT;
+		break;
+	case FOURCC_DXT5:
+		format=GL_COMPRESSED_RGBA_S3TC_DXT3_EXT;
+		break;
+	default:
+		delete [] buffer;
+		return 0;
+	}
+
+	GLuint textureID;
+	glGenTextures(1,&textureID);
+
+	//"Bind" the newly created texture : all future texture functions will modify this texture
+	glBindTexture(GL_TEXTURE_2D,textureID);
+
+	//逐个填充mipmap
+	unsigned int blockSize = (format == GL_COMPRESSED_RGBA_S3TC_DXT1_EXT) ? 8:16;
+	unsigned int offset = 0;
+
+	//load the mipmaps
+	for (unsigned int level=0;level<mipMapCount && (width || height);++level)
+	{
+		unsigned int size = ((width+3)/4)*((height+3)/4)*blockSize;
+		glCompressedTexImage2D(GL_TEXTURE_2D,level,format,width,height,0,size,buffer+offset);
+		offset += size;
+		width /= 2;
+		height /= 2;
+	}
+
+	delete [] buffer;
+
+	return textureID;
 }

@@ -179,10 +179,6 @@
 				>
 			</File>
 			<File
-				RelativePath="..\include\common\loadBMP_custom.cpp"
-				>
-			</File>
-			<File
 				RelativePath="..\include\common\shader.cpp"
 				>
 			</File>
@@ -205,6 +201,10 @@
 						UsePrecompiledHeader="1"
 					/>
 				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\include\common\texture.cpp"
+				>
 			</File>
 		</Filter>
 		<Filter
@@ -235,6 +235,10 @@
 				>
 			</File>
 		</Filter>
+		<File
+			RelativePath=".\glTexParameteri.md"
+			>
+		</File>
 		<File
 			RelativePath=".\ReadMe.md"
 			>
