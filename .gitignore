@@ -213,12 +213,5 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
-Test/main.cpp
 Test/Test.vcproj
-Test/Test.cpp
-Test/Test.cpp
-Test/uvtemplate.bmp
-Test/Test.cpp
-Test/Test.cpp
-Test/Test.cpp
 Test/Test.cpp
