@@ -14,7 +14,7 @@ GLuint loadBMP_custom(const char * imagepath);
 ![](img/1.png)
 * 使用三次线性采样
 ![](img/2.png)
-*使用loadDDS函数加载纹理
+* 使用loadDDS函数加载纹理
 ![](img/DDS.png)
 
 **NOTE:** 用的C++，原版的用的C里面的fread实现的，改写为C++后用的read，打开的时候一定要注意加上ios::binary,不然的话bmp的数据会以ASCII的形式读取，得不到正确的二进制像素数据
