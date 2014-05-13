@@ -4,12 +4,20 @@
 using namespace std;
 
 #include <gl/glew.h>
-#include <Windows.h>
-#include <common/loadBMP_custom.hpp>
+#include <glfw/glfw3.h>
 
 int main()
 {
-	GLuint image=loadBMP_custom("uvtemplate.bmp");
-	
+	//GLuint image=loadBMP_custom("uvtemplate.bmp");
+	if (!glfwInit())
+	{
+		cerr<<"Failed to initialize GLFW"<<endl;
+		return -1;
+	}
+
+	for (int i=0;i<10000;++i)
+	{
+		cout<<glfwGetTime()<<endl;
+	}
 	return 0;
 }

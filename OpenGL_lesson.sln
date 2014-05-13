@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "Test\Test.vcproj", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "05_A textured cube", "05_A textured cube\05_A textured cube.vcproj", "{E43036C7-D8A4-4745-AD2A-C8DF9DD0DBA9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "06_Keyboard and mouse", "06_Keyboard and mouse\06_Keyboard and mouse.vcproj", "{99838AC8-0AF3-4E04-9E2E-F3884C9403B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -55,6 +57,10 @@ Global
 		{E43036C7-D8A4-4745-AD2A-C8DF9DD0DBA9}.Debug|Win32.Build.0 = Debug|Win32
 		{E43036C7-D8A4-4745-AD2A-C8DF9DD0DBA9}.Release|Win32.ActiveCfg = Release|Win32
 		{E43036C7-D8A4-4745-AD2A-C8DF9DD0DBA9}.Release|Win32.Build.0 = Release|Win32
+		{99838AC8-0AF3-4E04-9E2E-F3884C9403B3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{99838AC8-0AF3-4E04-9E2E-F3884C9403B3}.Debug|Win32.Build.0 = Debug|Win32
+		{99838AC8-0AF3-4E04-9E2E-F3884C9403B3}.Release|Win32.ActiveCfg = Release|Win32
+		{99838AC8-0AF3-4E04-9E2E-F3884C9403B3}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
