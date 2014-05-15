@@ -56,8 +56,8 @@ void computeMatricesFromInputs()
 	glfwSetCursorPos(window,WIDTH/2,HEIGHT/2);
 
 	//Compute new orientation
-	horizontalAngle += mouseSpeed*deltaTime*float(WIDTH/2 - xpos);
-	verticalAngle +=mouseSpeed*deltaTime*float(HEIGHT/2 - ypos);
+	horizontalAngle += mouseSpeed*float(WIDTH/2 - xpos);
+	verticalAngle += mouseSpeed*float(HEIGHT/2 - ypos);
 
 	//Direction : Spherical coordinates to Cartesian coordinates conversion
 	//direction:实现方向。球坐标到直角坐标的转换,即球的一个半径投影到(x,y,z)各方向的值
