@@ -35,7 +35,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	glfwWindowHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
 
 	//window=glfwCreateWindow(800,450,"05_A textured cube",glfwGetPrimaryMonitor(),NULL);
-	window=glfwCreateWindow(WIDTH,HEIGHT,"05_Keyboard and mouse",NULL,NULL);
+	window=glfwCreateWindow(WIDTH,HEIGHT,"06_Keyboard and mouse",NULL,NULL);
 	if (window==NULL)
 	{
 		cerr<<"Failed to open GLFW window.Maybe your GPU is not supported!"<<endl;
@@ -82,82 +82,82 @@ int _tmain(int argc, _TCHAR* argv[])
 	//Our vertices.Three consecutive floats give a 3D vertex;Three consecutive vertices give a triangle.
 	//A cube has 6 faces with 2 triangles each,so this makes 6*2=12 triangles,and 12*3 vertices
 	static const GLfloat g_vertex_buffer_data[]={
-		-1.0f,-1.0f,-1.0f,	//triangle 1:begin
-		-1.0f,-1.0f,1.0f,
-		-1.0f,1.0f,1.0f,	//triangle 1:end
-		1.0f, 1.0f,-1.0f,	//triangle 2:begin
 		-1.0f,-1.0f,-1.0f,
-		-1.0f, 1.0f,-1.0f,	//triangle 2:end
-		1.0f,-1.0f, 1.0f,
+		-1.0f,-1.0f, 1.0f,
+		-1.0f, 1.0f, 1.0f,
+		 1.0f, 1.0f,-1.0f,
 		-1.0f,-1.0f,-1.0f,
-		1.0f,-1.0f,-1.0f,
-		1.0f, 1.0f,-1.0f,
-		1.0f,-1.0f,-1.0f,
+		-1.0f, 1.0f,-1.0f,
+		 1.0f,-1.0f, 1.0f,
+		-1.0f,-1.0f,-1.0f,
+		 1.0f,-1.0f,-1.0f,
+		 1.0f, 1.0f,-1.0f,
+		 1.0f,-1.0f,-1.0f,
 		-1.0f,-1.0f,-1.0f,
 		-1.0f,-1.0f,-1.0f,
 		-1.0f, 1.0f, 1.0f,
 		-1.0f, 1.0f,-1.0f,
-		1.0f,-1.0f, 1.0f,
+		 1.0f,-1.0f, 1.0f,
 		-1.0f,-1.0f, 1.0f,
 		-1.0f,-1.0f,-1.0f,
 		-1.0f, 1.0f, 1.0f,
 		-1.0f,-1.0f, 1.0f,
-		1.0f,-1.0f, 1.0f,
-		1.0f, 1.0f, 1.0f,
-		1.0f,-1.0f,-1.0f,
-		1.0f, 1.0f,-1.0f,
-		1.0f,-1.0f,-1.0f,
-		1.0f, 1.0f, 1.0f,
-		1.0f,-1.0f, 1.0f,
-		1.0f, 1.0f, 1.0f,
-		1.0f, 1.0f,-1.0f,
+		 1.0f,-1.0f, 1.0f,
+		 1.0f, 1.0f, 1.0f,
+		 1.0f,-1.0f,-1.0f,
+		 1.0f, 1.0f,-1.0f,
+		 1.0f,-1.0f,-1.0f,
+		 1.0f, 1.0f, 1.0f,
+		 1.0f,-1.0f, 1.0f,
+		 1.0f, 1.0f, 1.0f,
+		 1.0f, 1.0f,-1.0f,
 		-1.0f, 1.0f,-1.0f,
-		1.0f, 1.0f, 1.0f,
+		 1.0f, 1.0f, 1.0f,
 		-1.0f, 1.0f,-1.0f,
 		-1.0f, 1.0f, 1.0f,
-		1.0f, 1.0f, 1.0f,
+		 1.0f, 1.0f, 1.0f,
 		-1.0f, 1.0f, 1.0f,
-		1.0f,-1.0f, 1.0f
+		 1.0f,-1.0f, 1.0f
 	};
 
 	//Two UV coordinates for each vertex. They were created with Blender. You'll learn shortly how to do this yourself
 	static const GLfloat g_uv_buffer_data[]={
-		0.000059f, 1.0f-0.000004f,
-		0.000103f, 1.0f-0.336048f,
-		0.335973f, 1.0f-0.335903f,
-		1.000023f, 1.0f-0.000013f,
-		0.667979f, 1.0f-0.335851f,
-		0.999958f, 1.0f-0.336064f,
-		0.667979f, 1.0f-0.335851f,
-		0.336024f, 1.0f-0.671877f,
-		0.667969f, 1.0f-0.671889f,
-		1.000023f, 1.0f-0.000013f,
-		0.668104f, 1.0f-0.000013f,
-		0.667979f, 1.0f-0.335851f,
-		0.000059f, 1.0f-0.000004f,
-		0.335973f, 1.0f-0.335903f,
-		0.336098f, 1.0f-0.000071f,
-		0.667979f, 1.0f-0.335851f,
-		0.335973f, 1.0f-0.335903f,
-		0.336024f, 1.0f-0.671877f,
-		1.000004f, 1.0f-0.671847f,
-		0.999958f, 1.0f-0.336064f,
-		0.667979f, 1.0f-0.335851f,
-		0.668104f, 1.0f-0.000013f,
-		0.335973f, 1.0f-0.335903f,
-		0.667979f, 1.0f-0.335851f,
-		0.335973f, 1.0f-0.335903f,
-		0.668104f, 1.0f-0.000013f,
-		0.336098f, 1.0f-0.000071f,
-		0.000103f, 1.0f-0.336048f,
-		0.000004f, 1.0f-0.671870f,
-		0.336024f, 1.0f-0.671877f,
-		0.000103f, 1.0f-0.336048f,
-		0.336024f, 1.0f-0.671877f,
-		0.335973f, 1.0f-0.335903f,
-		0.667969f, 1.0f-0.671889f,
-		1.000004f, 1.0f-0.671847f,
-		0.667979f, 1.0f-0.335851f
+		0.000059f, 0.000004f, 
+		0.000103f, 0.336048f, 
+		0.335973f, 0.335903f, 
+		1.000023f, 0.000013f, 
+		0.667979f, 0.335851f, 
+		0.999958f, 0.336064f, 
+		0.667979f, 0.335851f, 
+		0.336024f, 0.671877f, 
+		0.667969f, 0.671889f, 
+		1.000023f, 0.000013f, 
+		0.668104f, 0.000013f, 
+		0.667979f, 0.335851f, 
+		0.000059f, 0.000004f, 
+		0.335973f, 0.335903f, 
+		0.336098f, 0.000071f, 
+		0.667979f, 0.335851f, 
+		0.335973f, 0.335903f, 
+		0.336024f, 0.671877f, 
+		1.000004f, 0.671847f, 
+		0.999958f, 0.336064f, 
+		0.667979f, 0.335851f, 
+		0.668104f, 0.000013f, 
+		0.335973f, 0.335903f, 
+		0.667979f, 0.335851f, 
+		0.335973f, 0.335903f, 
+		0.668104f, 0.000013f, 
+		0.336098f, 0.000071f, 
+		0.000103f, 0.336048f, 
+		0.000004f, 0.671870f, 
+		0.336024f, 0.671877f, 
+		0.000103f, 0.336048f, 
+		0.336024f, 0.671877f, 
+		0.335973f, 0.335903f, 
+		0.667969f, 0.671889f, 
+		1.000004f, 0.671847f, 
+		0.667979f, 0.335851f
 	};
 
 	GLuint vertexbuffer;
@@ -181,13 +181,13 @@ int _tmain(int argc, _TCHAR* argv[])
 		//Compute the MVP matrix from keybord and mouse input
 		computeMatricesFromInputs();
 		//Projection Matrix
-		glm::mat4 Projection=getProjectionMatrix();
+		glm::mat4 ProjectionMatrix=getProjectionMatrix();
 		//Camera matrix
-		glm::mat4 View=getViewMatrix();
+		glm::mat4 ViewMatrix=getViewMatrix();
 		//Model matrix:an identity matrix(model will be at the origin)
-		glm::mat4 Model=glm::mat4(1.0f);
+		glm::mat4 ModelMatrix=glm::mat4(1.0f);
 		//Our ModelViewProjection:multiplication of our 3 matrices
-		glm::mat4 MVP=Projection*View*Model;
+		glm::mat4 MVP=ProjectionMatrix*ViewMatrix*ModelMatrix;
 
 		//Send our transformation to the currently bound shader,in the "MVP" uniform
 		glUniformMatrix4fv(MatrixID,1,GL_FALSE,&MVP[0][0]);
