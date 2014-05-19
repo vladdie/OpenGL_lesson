@@ -56,8 +56,7 @@ bool loadOBJ(const char* path,
 		{	//表面,对于每一组值，第一个值代表顶点索引，
 			//第二个代表纹理索引，第三个代表法向量
 			unsigned int vertexIndex[3],uvIndex[3],normalIndex[3];
-			char ch;	//接收'/','\n'这些多于的字符
-
+			char ch;	//接收'/'
 			file>>vertexIndex[0]>>ch>>uvIndex[0]>>ch>>normalIndex[0]
 				>>vertexIndex[1]>>ch>>uvIndex[1]>>ch>>normalIndex[1]
 				>>vertexIndex[2]>>ch>>uvIndex[2]>>ch>>normalIndex[2];
@@ -93,6 +92,7 @@ bool loadOBJ(const char* path,
 		out_uvs.push_back(uv);
 		out_normals.push_back(nomal);
 	}
+
 	file.close();
 
 	return true;

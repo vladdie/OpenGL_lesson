@@ -25,7 +25,7 @@ GLuint LoadShaders(const char * vertex_file_path,const char * fragment_file_path
 	} 
 	else
 	{
-		cerr<<"Impossible to open"<<vertex_file_path<<"Are you in the right directory? Don't forget to read the FAQ!"<<endl;
+		cerr<<"Impossible to open:"<<vertex_file_path<<"Are you in the right directory? Don't forget to read the FAQ!"<<endl;
 		cin.get();
 		return 0;
 	}

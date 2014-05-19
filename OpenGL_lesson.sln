@@ -21,6 +21,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "06_Keyboard and mouse", "06
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "07_Model_loading", "07_Model_loading\07_Model_loading.vcproj", "{E2DAE6A4-0EE4-43EA-9471-E1A39E90F914}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "08_Basic_shading", "08_Basic_shading\08_Basic_shading.vcproj", "{0CDC3B76-1D26-48A4-9D34-6D1FAD5C04F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -67,6 +69,10 @@ Global
 		{E2DAE6A4-0EE4-43EA-9471-E1A39E90F914}.Debug|Win32.Build.0 = Debug|Win32
 		{E2DAE6A4-0EE4-43EA-9471-E1A39E90F914}.Release|Win32.ActiveCfg = Release|Win32
 		{E2DAE6A4-0EE4-43EA-9471-E1A39E90F914}.Release|Win32.Build.0 = Release|Win32
+		{0CDC3B76-1D26-48A4-9D34-6D1FAD5C04F3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0CDC3B76-1D26-48A4-9D34-6D1FAD5C04F3}.Debug|Win32.Build.0 = Debug|Win32
+		{0CDC3B76-1D26-48A4-9D34-6D1FAD5C04F3}.Release|Win32.ActiveCfg = Release|Win32
+		{0CDC3B76-1D26-48A4-9D34-6D1FAD5C04F3}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
